@@ -33,10 +33,10 @@ spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:oracle:thin:@localhost:1521:xe
-        username: system
-        password: oracle
+        username: jhipsterdev
+        password: jhipsterdev
     jpa:
-        database-platform: org.hibernate.dialect.Oracle12cDialect
+        database-platform: org.hibernate.dialect.Oracle10gDialect
         database: ORACLE
         show-sql: true
         properties:
@@ -46,10 +46,16 @@ spring:
             hibernate.generate_statistics: true
             hibernate.cache.region.factory_class: io.github.jhipster.config.jcache.NoDefaultJCacheRegionFactory
     mail:
-        host: localhost
-        port: 25
-        username:
-        password:
+        host: smtp.gmail.com
+        port: 587
+        username: ntt.cn2.01@gmail.com
+        password: ntt123456
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
     messages:
         cache-seconds: 1
     thymeleaf:
@@ -67,16 +73,16 @@ liquibase:
 #
 # Then, modify the server.ssl properties so your "server" configuration looks like:
 #
-# server:
-#    port: 8443
-#    ssl:
-#        key-store: keystore.p12
-#        key-store-password: <your-password>
-#        key-store-type: PKCS12
-#        key-alias: jhipster
-# ===================================================================
 server:
-    port: 8080
+    port: 8084
+    ssl:
+        key-store: keystore.p12
+        key-store-password: jhipster
+        key-store-type: PKCS12
+        key-alias: jhipster
+# ===================================================================
+# server:
+#     port: 8084
 
 # ===================================================================
 # JHipster specific properties
@@ -102,13 +108,13 @@ jhipster:
     security:
         authentication:
             jwt:
-                secret: my-secret-token-to-change-in-production
+                secret: 707ea06c246cb384bf574d4e35cfe5f5b0cd378a
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: jhipster@localhost
-        base-url: http://127.0.0.1:8080
+        base-url: https://localhost:8084
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         graphite: # Use the "graphite" Maven profile to have the Graphite dependencies

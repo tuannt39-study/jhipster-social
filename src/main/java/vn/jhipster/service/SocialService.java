@@ -119,6 +119,8 @@ public class SocialService {
         switch (providerId) {
             case "twitter":
                 return userProfile.getUsername().toLowerCase();
+            case "facebook":
+                return userProfile.getId() + "_" + userProfile.getEmail();
             default:
                 return userProfile.getFirstName().toLowerCase() + "_" + userProfile.getLastName().toLowerCase();
         }
