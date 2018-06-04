@@ -5,9 +5,9 @@
         .module('jhipsterApp')
         .controller('ResetFinishController', ResetFinishController);
 
-    ResetFinishController.$inject = ['$stateParams', '$timeout', 'Auth', 'LoginService'];
+    ResetFinishController.$inject = ['$stateParams', '$timeout', 'Auth'];
 
-    function ResetFinishController ($stateParams, $timeout, Auth, LoginService) {
+    function ResetFinishController ($stateParams, $timeout, Auth) {
         var vm = this;
 
         vm.keyMissing = angular.isUndefined($stateParams.key);
@@ -15,9 +15,9 @@
         vm.doNotMatch = null;
         vm.error = null;
         vm.finishReset = finishReset;
-        vm.login = LoginService.open;
         vm.resetAccount = {};
         vm.success = null;
+        vm.login = login;
 
         $timeout(function (){angular.element('#password').focus();});
 
@@ -34,6 +34,9 @@
                     vm.error = 'ERROR';
                 });
             }
+        }
+        function login () {
+            $state.go('login');
         }
     }
 })();

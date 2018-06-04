@@ -5,15 +5,15 @@
         .module('jhipsterApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+    HomeController.$inject = ['$scope', 'Principal', '$state'];
 
-    function HomeController ($scope, Principal, LoginService, $state) {
+    function HomeController ($scope, Principal, $state) {
         var vm = this;
 
         vm.account = null;
         vm.isAuthenticated = null;
-        vm.login = LoginService.open;
         vm.register = register;
+        vm.login = login;
         $scope.$on('authenticationSuccess', function() {
             getAccount();
         });
@@ -28,6 +28,9 @@
         }
         function register () {
             $state.go('register');
+        }
+        function login () {
+            $state.go('login');
         }
     }
 })();

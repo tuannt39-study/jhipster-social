@@ -6,16 +6,16 @@
         .controller('RegisterController', RegisterController);
 
 
-    RegisterController.$inject = ['$translate', '$timeout', 'Auth', 'LoginService', 'errorConstants'];
+    RegisterController.$inject = ['$translate', '$timeout', 'Auth', 'errorConstants', '$state'];
 
-    function RegisterController ($translate, $timeout, Auth, LoginService, errorConstants) {
+    function RegisterController ($translate, $timeout, Auth, errorConstants, $state) {
         var vm = this;
 
         vm.doNotMatch = null;
         vm.error = null;
         vm.errorUserExists = null;
-        vm.login = LoginService.open;
         vm.register = register;
+        vm.login = login;
         vm.registerAccount = {};
         vm.success = null;
 
@@ -44,6 +44,9 @@
                     }
                 });
             }
+        }
+        function login () {
+            $state.go('login');
         }
     }
 })();
