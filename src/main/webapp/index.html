@@ -16,26 +16,21 @@
     <!-- endinject -->
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
-    <link rel="stylesheet" href="content/css/main.css">
+    <link rel="stylesheet" href="content/css/material-dashboard.css">
+    <link rel="stylesheet" href="content/css/demo.css">
+    <link rel="stylesheet" href="content/css/font-awesome.min.css">
+    <link rel="stylesheet" href="content/css/google.css">
     <!-- endbuild -->
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="/content/images/img/favicon.png" />
     <link rel="manifest" href="manifest.webapp" />
 </head>
 <body ng-app="jhipsterApp" ng-strict-di>
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <page-ribbon></page-ribbon>
-    <div ui-view="navbar" ng-cloak></div>
-    <div class="container">
-        <div class="well" ui-view="content">
-            <!-- Angular views -->
-        </div>
 
-        <div class="footer" ng-cloak>
-            <p data-translate="footer">This is your footer</p>
-        </div>
-    </div>
+    <div class="wrapper" ui-view="content"></div>
+
     <noscript>
         <h1>You must enable javascript to view this page.</h1>
     </noscript>
@@ -89,7 +84,6 @@
     <script src="app/app.module.js"></script>
     <script src="app/services/user/user.service.js"></script>
     <script src="app/services/profiles/profile.service.js"></script>
-    <script src="app/services/profiles/page-ribbon.directive.js"></script>
     <script src="app/services/auth/register.service.js"></script>
     <script src="app/services/auth/principal.service.js"></script>
     <script src="app/services/auth/password-reset-init.service.js"></script>
@@ -194,5 +188,15 @@
     <!-- endinject -->
     <!-- endbuild -->
 
+    <!-- build:js app/extlibs.js  -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/material.min.js"></script>
+    <script src="assets/js/chartist.min.js"></script>
+    <script src="assets/js/arrive.min.js"></script>
+    <script src="assets/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="assets/js/bootstrap-notify.js"></script>
+    <script src="assets/js/material-dashboard.js"></script>
+    <script src="assets/js/demo.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
