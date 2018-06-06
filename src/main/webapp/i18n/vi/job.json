@@ -1,0 +1,26 @@
+
+{
+    "jhipsterApp": {
+        "job" : {
+            "home": {
+                "title": "Jobs",
+                "createLabel": "Thêm mới một Job",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Job"
+            },
+            "created": "Một Job mới được tạo với định danh {{ param }}",
+            "updated": "Một Job cập nhật với định danh {{ param }}",
+            "deleted": "Một Job đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Job {{ id }}?"
+            },
+            "detail": {
+                "title": "Job"
+            },
+            "jobTitle": "Job Title",
+            "minSalary": "Min Salary",
+            "maxSalary": "Max Salary",
+            "employee": "Employee",
+            "task": "Task"
+        }
+    }
+}

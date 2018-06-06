@@ -1,0 +1,26 @@
+
+{
+    "jhipsterApp": {
+        "location" : {
+            "home": {
+                "title": "Locations",
+                "createLabel": "Thêm mới một Location",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Location"
+            },
+            "created": "Một Location mới được tạo với định danh {{ param }}",
+            "updated": "Một Location cập nhật với định danh {{ param }}",
+            "deleted": "Một Location đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Location {{ id }}?"
+            },
+            "detail": {
+                "title": "Location"
+            },
+            "streetAddress": "Street Address",
+            "postalCode": "Postal Code",
+            "city": "City",
+            "stateProvince": "State Province",
+            "country": "Country"
+        }
+    }
+}
