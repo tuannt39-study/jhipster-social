@@ -21,12 +21,17 @@
             'ngMaterial',
             'ngMessages'
         ])
-        .run(run);
+        .run(run)
+        .config(config);
 
     run.$inject = ['stateHandler', 'translationHandler'];
+    config.$inject = ['$mdThemingProvider'];
 
     function run(stateHandler, translationHandler) {
         stateHandler.initialize();
         translationHandler.initialize();
+    }
+    function config($mdThemingProvider) {
+        $mdThemingProvider.theme('altTheme').primaryPalette('purple');
     }
 })();
